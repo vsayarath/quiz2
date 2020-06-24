@@ -1,0 +1,43 @@
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
+
+function App() extends React.Components {
+
+  state = {
+	name = "Andrew"
+	}
+
+  shouldComponentUpdate(nextProps,nextState) {
+	if(nextState.name == "Tom"){
+	return true;
+	}
+	return false;
+  }
+
+  componentDidMount() {
+   this.hello();
+   this.setState({
+	name : "Kobe",
+	})
+
+  }
+
+   componentDidUpdate() {
+	console.log("did Update");
+  }
+
+  hello = () = > {
+	console.log("Hello")
+  }
+  render(){
+    return(
+	<div className="App">
+	<div>{this.state.name}</div>
+	</div>
+  );
+
+}
+}
+
+export default App;
